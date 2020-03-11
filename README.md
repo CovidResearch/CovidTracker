@@ -9,10 +9,11 @@ It is dockerized and runs PHP, Nginx, PostgreSQL and Redis.
 
     git clone https://github.com/CovidResearch/CovidTracker.git
     cd CovidTracker 
+    setfacl -Rm u:http:rwx bootstrap/cache storage
     docker-compose up -d
     composer install
     php artisan migrate
-
+    php artisan key:generate
 
 * Watch the [**construction timelepse of this project**](https://)!
 
