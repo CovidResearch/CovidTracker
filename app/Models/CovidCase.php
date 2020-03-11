@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
  * @property string      $id           UUID of case numbers per region
  * @property string      $region_id    UUID of the region
  * @property string      $severity     ENUM [active, serious, recovered, dead, unknown]
+ * @property Carbon      $logged_at
  * @property Carbon      $infected_at
  * @property Carbon      $recovered_at
  * @property Carbon      $symptoms_started_at

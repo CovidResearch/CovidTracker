@@ -22,6 +22,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(CaseSeeder::class);
+        $this->call(CountriesSeeder::class);
+        $this->call(RegionsSeeder::class);
+        $this->call(SymptomsSeeder::class);
+        $this->call(CasesSeeder::class);
+        $this->call(CaseSymptomsSeeder::class);
     }
 }

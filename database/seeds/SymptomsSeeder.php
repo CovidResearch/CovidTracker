@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class SymptomSeeder extends Seeder
+class SymptomsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,8 @@ class SymptomSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('symptoms')->truncate();
+
         $data = [
             [
                 'id'          => 'eyJ0eXAiOiJKV1QiLCJhb8',
