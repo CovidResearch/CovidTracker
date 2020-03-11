@@ -11,7 +11,7 @@
  * This file is licensed under the MIT License.
  */
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
