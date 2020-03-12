@@ -64,7 +64,6 @@ class VersionOnePointOh extends Migration
         });
 
         Schema::create('case_symptoms', function (Blueprint $table) {
-            $table->char('id', 22)->primary();
             $table->char('case_id', 22);
             $table->char('symptom_id', 22);
             $table->integer('severity')->nullable();

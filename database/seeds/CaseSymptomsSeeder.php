@@ -27,7 +27,6 @@ class CaseSymptomsSeeder extends Seeder
 
         $data = [
             [
-                'id'         => 'iVo76KFwHkAbpZf39MiSG2',
                 'case_id'    => 'iVo76KFwHkAbpZf39MiSG3',
                 'symptom_id' => 'eyJ0eXAiOiJKV1QiLCJhb8',
                 'severity'   => 8,
@@ -37,7 +36,6 @@ class CaseSymptomsSeeder extends Seeder
                 'updated_at' => '2020-03-10 20:44:00',
             ],
             [
-                'id'         => 'iVo76KFwHkAbpZf39MiSG4',
                 'case_id'    => 'iVo76KFwHkAbpZf39MiSG3',
                 'symptom_id' => 'eyJ0eXAiOiJKV1QiLCJhb9',
                 'severity'   => 8,
