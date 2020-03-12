@@ -39,8 +39,6 @@ Route::prefix('v1')->namespace('Api\V1')->group(function () {
         Route::apiResource('cases/active', Cases\ActiveController::class);
         Route::apiResource('cases/serious', Cases\SevereController::class);
 
-
-
         // Comments
         Route::apiResource('comments', 'CommentController')->only('destroy');
 
@@ -64,4 +62,3 @@ Route::prefix('v1')->namespace('Api\V1')->group(function () {
     // Media
     Route::apiResource('media', 'MediaController')->only('index');
 });
-
