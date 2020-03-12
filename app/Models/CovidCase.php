@@ -3,9 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
+use Illuminate\Database\Query\Builder as DB_Builder;
 use PHPExperts\ConciseUuid\ConciseUuidModel;
 
 /**
@@ -32,5 +30,24 @@ class CovidCase extends ConciseUuidModel
             'case_id',
             'symptom_id',
         );
+    }
+
+    public function region()
+    {
+        return $this->belongsTo(Region::class);
+    }
+
+    public function getCountryAttribute()
+    {
+        return Country::query()
+            ->whereIn('id', function (DB_Builder $query) {
+                return $query->select('country_id')
+                    ->from('regions')
+                    ->whereIn('id', function (DB_Builder $query) {
+                        return $query->select('region_id')
+                            ->from('cases')
+                            ->where(['id' => $this->id]);
+                    });
+            })->get();
     }
 }
