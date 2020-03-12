@@ -24,8 +24,13 @@ class CovidCase extends ConciseUuidModel
 {
     protected $table = 'cases';
 
-    public function symptoms(): HasManyThrough
+    public function symptoms()
     {
-        return $this->hasManyThrough(CaseSymptom::class, Symptom::class);
+        return $this->belongsToMany(
+            Symptom::class,
+            'case_symptoms',
+            'case_id',
+            'symptom_id',
+        );
     }
 }

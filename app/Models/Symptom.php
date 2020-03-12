@@ -15,4 +15,13 @@ use PHPExperts\ConciseUuid\ConciseUuidModel;
  */
 class Symptom extends ConciseUuidModel
 {
+    public function cases()
+    {
+        return $this->belongsToMany(
+            CovidCase::class,
+            'case_symptoms',
+            'symptom_id',
+            'case_id',
+        );
+    }
 }

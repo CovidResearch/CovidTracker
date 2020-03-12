@@ -19,11 +19,6 @@ class VersionOnePointOh extends Migration
             $table->timestamps();
         });
 
-        Schema::create('outcomes', function (Blueprint $table) {
-            $table->char('id', 22)->primary();
-            $table->string('name');
-        });
-
         Schema::create('countries', function (Blueprint $table) {
             $table->char('id', 22)->primary();
             $table->string('name');
