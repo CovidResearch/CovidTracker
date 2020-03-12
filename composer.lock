@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4731429c7f25ab92eaa813447a972209",
+    "content-hash": "d055312e122f5d6ec6e0f7ce60bf14f6",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1068,6 +1068,67 @@
                 "random"
             ],
             "time": "2018-07-02T15:55:56+00:00"
+        },
+        {
+            "name": "phpexperts/conciseuuid",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpexpertsinc/ConciseUuid.git",
+                "reference": "e8848d22bddb20268c33efe815bcd951cf7ace0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpexpertsinc/ConciseUuid/zipball/e8848d22bddb20268c33efe815bcd951cf7ace0a",
+                "reference": "e8848d22bddb20268c33efe815bcd951cf7ace0a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "ramsey/uuid": "^3.8",
+                "tuupola/base62": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.1",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "6.*|7.*|8.*",
+                "sempro/phpunit-pretty-print": "^1.0"
+            },
+            "suggest": {
+                "ext-gmp": "*",
+                "illuminate/support": "5.*|^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "PHPExperts\\ConciseUuid\\ConciseUuidServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPExperts\\ConciseUuid\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Theodore R. Smith",
+                    "email": "theodore@phpexperts.pro",
+                    "homepage": "https://www.phpexperts.pro/"
+                }
+            ],
+            "description": "An Eloquent model for using concise UUIDs (base62) as keys.",
+            "homepage": "https://github.com/phpexperts/conciseuuid",
+            "keywords": [
+                "ConciseUuid",
+                "laravel"
+            ],
+            "time": "2019-11-04T19:15:38+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -2907,6 +2968,58 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2019-10-24T08:53:34+00:00"
+        },
+        {
+            "name": "tuupola/base62",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tuupola/base62.git",
+                "reference": "035d71cc34027ca819b774cf3640f3ae6f8255fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tuupola/base62/zipball/035d71cc34027ca819b774cf3640f3ae6f8255fd",
+                "reference": "035d71cc34027ca819b774cf3640f3ae6f8255fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6|^7.0"
+            },
+            "require-dev": {
+                "overtrue/phplint": "^0.2.4",
+                "paragonie/random_compat": "^2.0",
+                "phpbench/phpbench": "^0.15.0",
+                "phpunit/phpunit": "^5.0|^6.0|^7.0",
+                "squizlabs/php_codesniffer": "^2.5"
+            },
+            "suggest": {
+                "ext-gmp": "GMP extension provides the fastest encoding and decoding."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tuupola\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mika Tuupola",
+                    "email": "tuupola@appelsiini.net",
+                    "homepage": "https://appelsiini.net/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Base62 encoder and decoder for arbitrary data",
+            "homepage": "https://github.com/tuupola/base62",
+            "keywords": [
+                "base62"
+            ],
+            "time": "2018-12-27T06:31:39+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

@@ -14,22 +14,27 @@ class VersionOnePointOh extends Migration
     public function up()
     {
         Schema::create('symptoms', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->char('id', 22)->primary();
             $table->string('name');
             $table->timestamps();
         });
 
+        Schema::create('outcomes', function (Blueprint $table) {
+            $table->char('id', 22)->primary();
+            $table->string('name');
+        });
+
         Schema::create('countries', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->char('id', 22)->primary();
             $table->string('name');
             $table->string('continent');
             $table->timestamps();
         });
 
         Schema::create('regions', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->char('id', 22)->primary();
             $table->string('name');
-            $table->string('country_id');
+            $table->char('country_id', 22);
             $table->timestamps();
 
             $table->foreign('country_id')
@@ -38,8 +43,8 @@ class VersionOnePointOh extends Migration
         });
 
         Schema::create('cases', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('region_id');
+            $table->char('id', 22)->primary();
+            $table->char('region_id', 22);
             $table->string('severity')->nullable();
             $table->dateTime('logged_at');
             $table->dateTime('infected_at')->nullable();
@@ -53,9 +58,9 @@ class VersionOnePointOh extends Migration
         });
 
         Schema::create('case_symptoms', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('case_id');
-            $table->string('symptom_id');
+            $table->char('id', 22)->primary();
+            $table->char('case_id', 22);
+            $table->char('symptom_id', 22);
             $table->integer('severity')->nullable();
             $table->dateTime('started_at')->nullable();
             $table->dateTime('ended_at')->nullable();

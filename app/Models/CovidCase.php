@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
+use PHPExperts\ConciseUuid\ConciseUuidModel;
 
 /**
  * @property string      $id           UUID of case numbers per region
@@ -19,7 +20,7 @@ use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
  * @property Carbon      $created_at
  * @property Carbon      $updated_at
  */
-class CovidCase extends Model
+class CovidCase extends ConciseUuidModel
 {
     protected $table = 'cases';
 
