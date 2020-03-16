@@ -12,7 +12,8 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
-        "phpexperts/conciseuuid": "^2.0"
+        "phpexperts/conciseuuid": "^2.0",
+        "phpexperts/jwt-guardian": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -59,5 +60,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/code/JWTGuardian"
+        }
+    ]
 }
