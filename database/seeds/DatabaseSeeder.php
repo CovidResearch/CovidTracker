@@ -28,5 +28,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CasesSeeder::class);
         $this->call(CaseSymptomsSeeder::class);
         $this->call(CaseOutcomesSeeder::class);
+        $this->call(UsersSeeder::class);
     }
 }
