@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SymptomsSeeder::class);
         $this->call(CasesSeeder::class);
         $this->call(CaseSymptomsSeeder::class);
+        $this->call(CaseOutcomesSeeder::class);
     }
 }
