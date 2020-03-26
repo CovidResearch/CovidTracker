@@ -27,6 +27,8 @@ use PHPExperts\ConciseUuid\ConciseUuidModel;
  */
 class Country extends ConciseUuidModel
 {
+    protected $guarded = ['id', 'created_at'];
+
     public function cases()
     {
         return CovidCase::query()
@@ -40,5 +42,21 @@ class Country extends ConciseUuidModel
     public function getCasesAttribute()
     {
         return $this->cases();
+    }
+
+    public static function fetchOrCreate(string $countryName): self
+    {
+        $country = self::query()
+            ->where(['name' => $countryName])
+            ->first();
+
+        if (!$country) {
+            /** @var self $country */
+            $country = self::query()->create([
+                'name' => $countryName,
+            ]);
+        }
+
+        return $country;
     }
 }

@@ -42,7 +42,7 @@ class VersionOnePointOh extends Migration
         Schema::create('countries', function (Blueprint $table) {
             $table->char('id', 22)->primary();
             $table->string('name');
-            $table->string('continent');
+            $table->string('continent')->nullable();
             $table->timestamps();
         });
 
@@ -55,6 +55,24 @@ class VersionOnePointOh extends Migration
             $table->foreign('country_id')
                 ->references('id')
                 ->on('countries');
+        });
+
+        Schema::create('regions_reports', function (Blueprint $table) {
+            $table->char('id', 22)->primary();
+            $table->date('date');
+            $table->char('region_id', 22);
+            $table->string('region_name');
+            $table->integer('confirmed')->index();
+            $table->integer('active')->index();
+            $table->integer('recovered')->index();
+            $table->integer('dead')->index();
+            $table->timestampsTz();
+
+            $table->unique(['date', 'region_id']);
+
+            $table->foreign('region_id')
+                ->references('id')
+                ->on('regions');
         });
 
         DB::transaction(function () {
@@ -137,6 +155,7 @@ class VersionOnePointOh extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('regions_reports');
         Schema::dropIfExists('case_outcomes');
         Schema::dropIfExists('outcomes');
         Schema::dropIfExists('case_symptoms');

@@ -26,8 +26,30 @@ use PHPExperts\ConciseUuid\ConciseUuidModel;
  */
 class Region extends ConciseUuidModel
 {
+    protected $guarded = ['id', 'created_at'];
+
     public function country(): BelongsTo
     {
         return $this->belongsTo(Country::class);
+    }
+
+    public static function fetchOrCreate(string $regionName, string $countryId): self
+    {
+        $region = self::query()
+            ->where([
+                'name'       => $regionName,
+                'country_id' => $countryId,
+            ])
+            ->first();
+
+        if (!$region) {
+            /** @var self $region */
+            $region = self::query()->create([
+                'name'       => $regionName,
+                'country_id' => $countryId,
+            ]);
+        }
+
+        return $region;
     }
 }

@@ -21,12 +21,12 @@ use PHPExperts\ConciseUuid\ConciseUuidModel;
  */
 class Outcome extends ConciseUuidModel
 {
-    public const UNKNOWN   = 'unknown';
-    public const ACTIVE    = 'active';
-    public const DIED      = 'died';
-    public const DISABLED  = 'disabled';
+    public const UNKNOWN = 'unknown';
+    public const ACTIVE = 'active';
+    public const DIED = 'died';
+    public const DISABLED = 'disabled';
     public const RECOVERED = 'recovered';
-    public const SERIOUS   = 'serious';
+    public const SERIOUS = 'serious';
 
     public const ALL = [
         self::UNKNOWN,

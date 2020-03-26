@@ -13,7 +13,9 @@
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "phpexperts/conciseuuid": "^2.0",
-        "phpexperts/jwt-guardian": "*"
+        "phpexperts/csv-speaker": "^1.1",
+        "phpexperts/jwt-guardian": "*",
+        "phpexperts/simple-dto": "^2.4"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

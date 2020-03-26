@@ -25,7 +25,7 @@ use PHPExperts\ConciseUuid\ConciseUuidModel;
  * @property Carbon      $infected_at
  * @property Carbon      $recovered_at
  * @property Carbon      $symptoms_started_at
- * @property CaseSymptom $symptoms
+ * @property Symptom[]   $symptoms
  * @property Carbon      $created_at
  * @property Carbon      $updated_at
  */

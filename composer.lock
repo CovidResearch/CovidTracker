@@ -1,11 +1,59 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c8e4a9c99ab9215350c55ca4719dadb0",
+    "content-hash": "dd481f65cdab1126c7aab702394976d1",
     "packages": [
+        {
+            "name": "0.0.0/composer-include-files",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpexpertsinc/composer-include-files.git",
+                "reference": "6776421c358c6a25b16eccb617de9478b7ae2019"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpexpertsinc/composer-include-files/zipball/6776421c358c6a25b16eccb617de9478b7ae2019",
+                "reference": "6776421c358c6a25b16eccb617de9478b7ae2019",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "ComposerIncludeFiles\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ComposerIncludeFiles\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Theodore R. Smith",
+                    "email": "theodore@phpexperts.pro"
+                },
+                {
+                    "name": "Tim Robertson",
+                    "email": "funkjedi@gmail.com"
+                }
+            ],
+            "description": "Include files at a higher priority than autoload files. Useful for overriding Laravel helpers.",
+            "homepage": "https://github.com/funkjedi/composer-include-files",
+            "keywords": [
+                "autoload",
+                "composer"
+            ],
+            "time": "2019-05-09T08:06:44+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "v0.1.1",
@@ -816,16 +864,6 @@
                 "sftp",
                 "storage"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/frankdejonge",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/league/flysystem",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-08T18:53:20+00:00"
         },
         {
@@ -1036,16 +1074,6 @@
                 "date",
                 "datetime",
                 "time"
-            ],
-            "funding": [
-                {
-                    "url": "https://opencollective.com/Carbon",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/nesbot/carbon",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-01T11:11:58+00:00"
         },
@@ -1269,12 +1297,123 @@
             "time": "2019-11-04T19:15:38+00:00"
         },
         {
+            "name": "phpexperts/csv-speaker",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpexpertsinc/CSVSpeaker.git",
+                "reference": "1a05983b24df2e9134f84f759913ccfbc6c5346a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpexpertsinc/CSVSpeaker/zipball/1a05983b24df2e9134f84f759913ccfbc6c5346a",
+                "reference": "1a05983b24df2e9134f84f759913ccfbc6c5346a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-spl": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.14",
+                "mockery/mockery": "^1.0",
+                "phpstan/phpstan": "^0.11.5",
+                "phpunit/phpunit": "^7.0",
+                "symfony/var-dumper": "^4.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPExperts\\CSVSpeaker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP Experts, Inc.",
+                    "homepage": "https://www.phpexperts.pro/"
+                },
+                {
+                    "name": "Theodore R. Smith",
+                    "homepage": "https://www.linkedin.com/in/hopeseekr"
+                }
+            ],
+            "description": "A quick and easy package for easily reading and writing CSV to/from strings and arrays.",
+            "homepage": "https://www.phpexperts.pro/",
+            "keywords": [
+                "Simple",
+                "csv",
+                "easy"
+            ],
+            "time": "2019-05-26T17:23:12+00:00"
+        },
+        {
+            "name": "phpexperts/datatype-validator",
+            "version": "v1.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpexpertsinc/DataTypeValidator.git",
+                "reference": "fbde45e43592c5be46b1f5b9a6158dd7352efde6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpexpertsinc/DataTypeValidator/zipball/fbde45e43592c5be46b1f5b9a6158dd7352efde6",
+                "reference": "fbde45e43592c5be46b1f5b9a6158dd7352efde6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "carbondate/carbon": "^1.33",
+                "phpbench/phpbench": "^0.16.9",
+                "phpstan/phpstan": "^0.11.6",
+                "phpunit/phpunit": "7.*|8.*",
+                "symfony/var-dumper": "^4.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPExperts\\DataTypeValidator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP Experts, Inc.",
+                    "homepage": "https://www.phpexperts.pro/"
+                },
+                {
+                    "name": "Theodore R. Smith",
+                    "homepage": "https://www.linkedin.com/in/tedrsmith"
+                }
+            ],
+            "description": "An easy to use data type validator (both strict and fuzzy).",
+            "keywords": [
+                "data type",
+                "data type validator",
+                "datatype",
+                "datatype validator",
+                "validation",
+                "validator"
+            ],
+            "time": "2019-07-30T18:18:16+00:00"
+        },
+        {
             "name": "phpexperts/jwt-guardian",
             "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "/code/JWTGuardian",
-                "reference": "810ea7eb732854c46a5e33196ce1f6b437ba3939"
+                "reference": "810ea7eb732854c46a5e33196ce1f6b437ba3939",
+                "shasum": null
             },
             "require": {
                 "ext-json": "*",
@@ -1389,6 +1528,120 @@
                 "laravel"
             ],
             "time": "2019-11-04T19:06:25+00:00"
+        },
+        {
+            "name": "phpexperts/laravel-env-polyfill",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpexpertsinc/Laravel57-env-polyfill.git",
+                "reference": "6f8209eb9c2cbb9581b9258b47504d86f912c3b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpexpertsinc/Laravel57-env-polyfill/zipball/6f8209eb9c2cbb9581b9258b47504d86f912c3b3",
+                "reference": "6f8209eb9c2cbb9581b9258b47504d86f912c3b3",
+                "shasum": ""
+            },
+            "require": {
+                "0.0.0/composer-include-files": "^1.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "6.*"
+            },
+            "type": "library",
+            "extra": {
+                "include_files": [
+                    "src/env-shim.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP Experts, Inc.",
+                    "homepage": "https://www.phpexperts.pro/"
+                },
+                {
+                    "name": "Theodore R. Smith",
+                    "homepage": "https://www.linkedin.com/in/hopeseekr"
+                },
+                {
+                    "name": "Taylor Otwell",
+                    "homepage": "https://www.laravel.com/"
+                }
+            ],
+            "description": "Backward compatible support for Laravel's pre-5.8 env() function.",
+            "homepage": "https://github/phpexpertsinc/",
+            "keywords": [
+                "5.7",
+                "env",
+                "laravel",
+                "shim"
+            ],
+            "time": "2019-07-07T18:34:15+00:00"
+        },
+        {
+            "name": "phpexperts/simple-dto",
+            "version": "v2.4.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpexpertsinc/SimpleDTO.git",
+                "reference": "909523556dd6274c219563aa23d5b068d44a1b02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpexpertsinc/SimpleDTO/zipball/909523556dd6274c219563aa23d5b068d44a1b02",
+                "reference": "909523556dd6274c219563aa23d5b068d44a1b02",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "nesbot/carbon": "2.*",
+                "php": ">=7.1",
+                "phpexperts/datatype-validator": "^1.5",
+                "phpexperts/laravel-env-polyfill": "^1.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpstan/phpstan": "*",
+                "phpunit/phpunit": "7.*|8.*",
+                "povils/phpmnd": "*",
+                "squizlabs/php_codesniffer": "*",
+                "symfony/var-dumper": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPExperts\\SimpleDTO\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP Experts, Inc.",
+                    "homepage": "https://www.phpexperts.pro/"
+                },
+                {
+                    "name": "Theodore R. Smith",
+                    "homepage": "https://www.linkedin.com/in/tedrsmith"
+                }
+            ],
+            "description": "A quick and easy DTO package.",
+            "homepage": "https://www.phpexperts.pro/",
+            "keywords": [
+                "api",
+                "data transfer objects",
+                "dto",
+                "restful"
+            ],
+            "time": "2019-09-24T13:46:48+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -1886,20 +2139,6 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-02-24T13:10:00+00:00"
         },
         {
@@ -2242,20 +2481,6 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-02-14T07:42:58+00:00"
         },
         {
@@ -2311,20 +2536,6 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-02-13T19:40:01+00:00"
         },
         {
@@ -2415,20 +2626,6 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-02-29T10:31:38+00:00"
         },
         {
@@ -2490,20 +2687,6 @@
             "keywords": [
                 "mime",
                 "mime-type"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-02-04T09:41:09+00:00"
         },
@@ -3013,20 +3196,6 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-02-07T20:06:44+00:00"
         },
         {
@@ -3102,20 +3271,6 @@
                 "routing",
                 "uri",
                 "url"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-02-25T12:41:09+00:00"
         },
@@ -3251,20 +3406,6 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-02-04T09:32:40+00:00"
         },
         {
@@ -3397,20 +3538,6 @@
             "keywords": [
                 "debug",
                 "dump"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-02-24T13:10:00+00:00"
         },
@@ -3587,12 +3714,6 @@
                 "jwt",
                 "laravel"
             ],
-            "funding": [
-                {
-                    "url": "https://www.patreon.com/seantymon",
-                    "type": "patreon"
-                }
-            ],
             "time": "2020-03-04T11:21:28+00:00"
         },
         {
@@ -3653,12 +3774,6 @@
                 "dotenv",
                 "env",
                 "environment"
-            ],
-            "funding": [
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-12T13:44:00+00:00"
         }
@@ -5432,6 +5547,5 @@
     "platform": {
         "php": "^7.1.3"
     },
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }
