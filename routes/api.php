@@ -30,14 +30,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('v1')->namespace('Api\V1')->group(function () {
-    Route::middleware(['auth:api', 'verified'])->group(function () {
+Route::prefix('v1')->group(function () {
+    Route::middleware([])->group(function () {
         // Data Viewing
-        Route::apiResource('cases', CaseController::class);
-        Route::apiResource('cases/recovered', Cases\RecoveredController::class);
-        Route::apiResource('cases/deaths', Cases\DeathController::class);
-        Route::apiResource('cases/active', Cases\ActiveController::class);
-        Route::apiResource('cases/serious', Cases\SevereController::class);
+        Route::get('cases', [CaseController::class, 'index']);
+        Route::get('cases/recovered', [Cases\RecoveredController::class, 'index']);
+        Route::get('cases/dead', [Cases\DeadController::class, 'index']);
+        Route::get('cases/active', [Cases\ActiveController::class, 'index']);
+        Route::get('cases/serious', [Cases\SevereController::class, 'index']);
 
         // Comments
         Route::apiResource('comments', 'CommentController')->only('destroy');

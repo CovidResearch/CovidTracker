@@ -13,6 +13,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CovidCase;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Routing\Controller;
+
 class CaseController extends Controller
 {
+    public function index()
+    {
+        return new JsonResponse(CovidCase::all());
+    }
 }

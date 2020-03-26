@@ -11,6 +11,7 @@
  * This file is licensed under the MIT License.
  */
 
+use App\Models\Outcome;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use PHPExperts\ConciseUuid\ConciseUuid;
@@ -30,7 +31,7 @@ class CasesSeeder extends Seeder
             [
                 'id'                  => 'iVo76KFwHkAbpZf39MiSG3',
                 'region_id'           => 'eyJ0eXAiOiJKV1QiLCJhII',
-                'severity'            => 'serious',
+                'status'              => 'serious',
                 'logged_at'           => '2020-02-11 00:00:00',
                 'infected_at'         => '2020-02-05 00:00:00',
                 'recovered_at'        => '2020-02-25 00:00:00',
@@ -41,7 +42,51 @@ class CasesSeeder extends Seeder
             [
                 'id'                  => ConciseUuid::generateNewId(),
                 'region_id'           => 'eyJ0eXAiOiJKV1QiLCJhII',
-                'severity'            => 'serious',
+                'status'              => 'serious',
+                'logged_at'           => '2020-02-11 00:00:00',
+                'infected_at'         => '2020-02-05 00:00:00',
+                'recovered_at'        => '2020-02-25 00:00:00',
+                'symptoms_started_at' => '2020-02-15 00:00:00',
+                'created_at'          => '2020-03-10 20:44:00',
+                'updated_at'          => '2020-03-10 20:44:00',
+            ],
+            [
+                'id'                  => ConciseUuid::generateNewId(),
+                'region_id'           => 'eyJ0eXAiOiJKV1QiLCJhII',
+                'status'              => Outcome::DIED,
+                'logged_at'           => '2020-02-11 00:00:00',
+                'infected_at'         => '2020-02-05 00:00:00',
+                'recovered_at'        => '2020-02-25 00:00:00',
+                'symptoms_started_at' => '2020-02-15 00:00:00',
+                'created_at'          => '2020-03-10 20:44:00',
+                'updated_at'          => '2020-03-10 20:44:00',
+            ],
+            [
+                'id'                  => ConciseUuid::generateNewId(),
+                'region_id'           => 'eyJ0eXAiOiJKV1QiLCJhII',
+                'status'              => Outcome::ACTIVE,
+                'logged_at'           => '2020-02-11 00:00:00',
+                'infected_at'         => '2020-02-05 00:00:00',
+                'recovered_at'        => '2020-02-25 00:00:00',
+                'symptoms_started_at' => '2020-02-15 00:00:00',
+                'created_at'          => '2020-03-10 20:44:00',
+                'updated_at'          => '2020-03-10 20:44:00',
+            ],
+            [
+                'id'                  => ConciseUuid::generateNewId(),
+                'region_id'           => 'eyJ0eXAiOiJKV1QiLCJhII',
+                'status'              => Outcome::DISABLED,
+                'logged_at'           => '2020-02-11 00:00:00',
+                'infected_at'         => '2020-02-05 00:00:00',
+                'recovered_at'        => '2020-02-25 00:00:00',
+                'symptoms_started_at' => '2020-02-15 00:00:00',
+                'created_at'          => '2020-03-10 20:44:00',
+                'updated_at'          => '2020-03-10 20:44:00',
+            ],
+            [
+                'id'                  => ConciseUuid::generateNewId(),
+                'region_id'           => 'eyJ0eXAiOiJKV1QiLCJhII',
+                'status'              => Outcome::DIED,
                 'logged_at'           => '2020-02-11 00:00:00',
                 'infected_at'         => '2020-02-05 00:00:00',
                 'recovered_at'        => '2020-02-25 00:00:00',

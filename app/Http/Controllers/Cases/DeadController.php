@@ -14,7 +14,19 @@
 namespace App\Http\Controllers\Cases;
 
 use App\Http\Controllers\Controller;
+use App\Models\CovidCase;
+use App\Models\Outcome;
+use Illuminate\Http\JsonResponse;
 
-class DeathController extends Controller
+class DeadController extends Controller
 {
+    public function index()
+    {
+        $cases = CovidCase::query()
+            ->where(['status' => Outcome::DIED])
+            ->orderBy('created_at')
+            ->get();
+
+        return new JsonResponse($cases);
+    }
 }

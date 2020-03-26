@@ -30,7 +30,7 @@ class CaseOutcomesSeeder extends Seeder
 
         $recoveredCase = CovidCase::query()->create([
             'region_id'           => 'eyJ0eXAiOiJKV1QiLCJhII',
-            'severity'            => 'serious',
+            'status'              => 'recovered',
             'logged_at'           => '2020-02-05 00:00:00',
             'infected_at'         => '2020-02-01 00:00:00',
             'recovered_at'        => '2020-03-12 00:00:00',
@@ -38,7 +38,6 @@ class CaseOutcomesSeeder extends Seeder
             'created_at'          => '2020-03-12 13:21:00',
             'updated_at'          => '2020-03-12 13:21:00',
         ]);
-
 
         $firstCaseId = CovidCase::query()->first()->id;
         $data = [

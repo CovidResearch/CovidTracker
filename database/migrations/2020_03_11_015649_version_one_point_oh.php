@@ -22,6 +22,7 @@ class VersionOnePointOh extends Migration
 {
     /**
      * Run the migrations.
+     *
      * @todo This probably really needs microtime dates for the cases, as at a certain
      *       dreadful moment, more than one per second will start flooding in. :-/
      */
@@ -56,21 +57,26 @@ class VersionOnePointOh extends Migration
                 ->on('countries');
         });
 
+        DB::transaction(function () {
+            Schema::create('cases', function (Blueprint $table) {
+                $table->char('id', 22)->primary();
+                $table->char('region_id', 22);
+            });
 
+            $addPeopleGenderEnum = 'ALTER TABLE cases Add COLUMN status outcome';
+            DB::statement($addPeopleGenderEnum);
 
-        Schema::create('cases', function (Blueprint $table) {
-            $table->char('id', 22)->primary();
-            $table->char('region_id', 22);
-            $table->string('severity')->nullable();
-            $table->dateTime('logged_at');
-            $table->dateTime('infected_at')->nullable();
-            $table->dateTime('recovered_at')->nullable();
-            $table->dateTime('symptoms_started_at')->nullable();
-            $table->timestamps();
+            Schema::table('cases', function (Blueprint $table) {
+                $table->dateTime('logged_at');
+                $table->dateTime('infected_at')->nullable();
+                $table->dateTime('recovered_at')->nullable();
+                $table->dateTime('symptoms_started_at')->nullable();
+                $table->timestamps();
 
-            $table->foreign('region_id')
-                ->references('id')
-                ->on('regions');
+                $table->foreign('region_id')
+                    ->references('id')
+                    ->on('regions');
+            });
         });
 
         Schema::create('case_symptoms', function (Blueprint $table) {
@@ -139,6 +145,6 @@ class VersionOnePointOh extends Migration
         Schema::dropIfExists('countries');
         Schema::dropIfExists('symptoms');
 
-        DB::statement("DROP TYPE IF EXISTS outcome;");
+        DB::statement('DROP TYPE IF EXISTS outcome;');
     }
 }

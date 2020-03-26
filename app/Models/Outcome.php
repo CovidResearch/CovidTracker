@@ -13,7 +13,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use PHPExperts\ConciseUuid\ConciseUuidModel;
 
 /**

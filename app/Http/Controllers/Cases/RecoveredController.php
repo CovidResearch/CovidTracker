@@ -14,7 +14,20 @@
 namespace App\Http\Controllers\Cases;
 
 use App\Http\Controllers\Controller;
+use App\Models\CovidCase;
+use App\Models\Outcome;
+use Illuminate\Http\JsonResponse;
 
 class RecoveredController extends Controller
 {
+    public function index()
+    {
+        $cases = CovidCase::query()
+            ->where(['status' => Outcome::RECOVERED])
+            ->orWhere(['status' => Outcome::DISABLED])
+            ->orderBy('created_at')
+            ->get();
+
+        return new JsonResponse($cases);
+    }
 }
